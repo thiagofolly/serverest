@@ -1,4 +1,6 @@
-const { faker } = require('@faker-js/faker');
+const { faker } = require('@faker-js/faker')
+import '../../support/commands'
+import '../../support/api_commands'
 
 function fillProductFields(name, price, description, quantity) {
     cy.get('[data-testid="nome"]').should('be.visible').type(name);

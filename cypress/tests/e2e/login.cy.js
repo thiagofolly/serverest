@@ -1,4 +1,6 @@
-const { faker } = require('@faker-js/faker');
+const { faker } = require('@faker-js/faker')
+import '../../support/commands'
+import '../../support/api_commands'
 
 function fillLoginFields(email, password) {
     cy.get('[data-testid="email"]').should('be.visible').type(email);

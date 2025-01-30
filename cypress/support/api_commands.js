@@ -1,7 +1,7 @@
 Cypress.Commands.add('api_login', user => {
     cy.request({
         method: 'POST',
-        url: '/login',
+        url: 'https://serverest.dev/login',
         body: user,
         failOnStatusCode: false
     })
@@ -19,7 +19,7 @@ Cypress.Commands.add('api_createUser', (user) => {
 Cypress.Commands.add('api_deleteUser', (userID) => {
     cy.request({
         method: 'DELETE',
-        url: `/usuarios/${userID}`,
+        url: `https://serverest.dev/usuarios/${userID}`,
         failOnStatusCode: false
     })
 })
@@ -29,7 +29,7 @@ Cypress.Commands.add('api_listUsers', (filter = {}) => {
     
     cy.request({
         method: 'GET',
-        url: `/usuarios?${queryString}`,
+        url: `https://serverest.dev/usuarios?${queryString}`,
         failOnStatusCode: false
     })
 })

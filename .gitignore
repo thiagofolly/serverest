@@ -1,5 +1,6 @@
 cypress.env.json
 cypress/screenshots/
+cypress/reports/
 cypress/videos/
 node_modules/
 temp/

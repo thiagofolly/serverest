@@ -1,4 +1,6 @@
-const { faker } = require('@faker-js/faker');
+const { faker } = require('@faker-js/faker')
+import '../../support/commands'
+import '../../support/api_commands'
 
 describe('User Creation Tests - Serverest', () => {
     let user, admin;

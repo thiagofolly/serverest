@@ -1,4 +1,5 @@
-const { faker } = require('@faker-js/faker');
+const { faker } = require('@faker-js/faker')
+import '../../support/commands'
 
 describe('User Sign Up Tests - Serverest', () => {
   beforeEach(() => {

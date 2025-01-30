@@ -1,4 +1,5 @@
-const { faker } = require('@faker-js/faker');
+const { faker } = require('@faker-js/faker')
+import '../../support/api_commands'
 
 describe('API Users - Serverest', () => {
     let user
@@ -12,7 +13,7 @@ describe('API Users - Serverest', () => {
         }
     })
     context('User Register', () => {
-        it.only('Should register a standard user successfully', () => {
+        it('Should register a standard user successfully', () => {
             cy.api_createUser(user)
                 .then(response => {
                     expect(response.status).to.equal(201)
@@ -22,7 +23,7 @@ describe('API Users - Serverest', () => {
     })
 
     context('List Users', () => {
-        it.only('Should list all registered users', () => {
+        it('Should list all registered users', () => {
             cy.api_createUser(user)
             cy.api_listUsers()
                 .then(response => {
@@ -31,7 +32,7 @@ describe('API Users - Serverest', () => {
                     expect(response.body.usuarios.some(u => u.nome === user.nome)).to.be.true;
                 })
         })
-        it.only('Should list a specific user searched for name', () => {
+        it('Should list a specific user searched for name', () => {
             cy.api_createUser(user)
             const filter = {
                 nome: user.nome
@@ -43,7 +44,7 @@ describe('API Users - Serverest', () => {
                     expect(response.body.usuarios[0].nome).to.equal(user.nome);
                 })
         })
-        it.only('Should list a specific user searched for email', () => {
+        it('Should list a specific user searched for email', () => {
             cy.api_createUser(user)
             const filter = {
                 email: user.email
@@ -55,7 +56,7 @@ describe('API Users - Serverest', () => {
                     expect(response.body.usuarios[0].email).to.equal(user.email);
                 })
         })
-        it.only('Should list a specific user searched for ID', () => {
+        it('Should list a specific user searched for ID', () => {
             cy.api_createUser(user)
                 .then((response) => {
                     const userID = response.body._id;
@@ -72,7 +73,7 @@ describe('API Users - Serverest', () => {
         })
     })
     context('User Delete', () => {
-        it.only('Should delete user successfully', () => {
+        it('Should delete user successfully', () => {
             cy.api_createUser(user)
                 .then((response) => {
                     const userID = response.body._id;
