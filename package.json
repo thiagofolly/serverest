@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "@faker-js/faker": "^9.4.0",
+    "cypress": "^14.0.0"
+  },
+  "scripts": {
+    "test:api": "npx cypress run --env TEST_TYPE=api --spec 'cypress/tests/api/**/*.cy.{js,ts}'",
+    "test:e2e": "npx cypress run --spec 'cypress/tests/e2e/**/*.cy.{js,ts}'"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2"
+  }
+}
