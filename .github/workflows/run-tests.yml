@@ -28,7 +28,7 @@ jobs:
         run: npx cypress run
 
       - name: Criar pasta para os relatórios
-        run: mkdir -p public && mv cypress/reports/*.html public/index.html
+        run: mkdir -p public && mv cypress/reports/html/index.html public/index.html
 
       - name: Deploy para GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
